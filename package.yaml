@@ -1,18 +1,18 @@
 name:                firestone
 version:             0.1.0.0
-github:              "githubuser/firestone"
+github:              "emilgedda/firestone"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2018 Author name here"
+author:              "Emil Gedda"
+maintainer:          "emil.gedda@emilgedda.se"
+copyright:           "2018 Emil Gedda"
 
 extra-source-files:
 - README.md
 - ChangeLog.md
 
 # Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
+# synopsis:            A light weight haskell clone of Hearthstone
+# category:            Education
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
@@ -21,9 +21,13 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- text >= 1.2 && < 2
+- containers >= 0.6 && < 1
+- pretty-show >= 1.9 && < 2
 
 library:
   source-dirs: src
+  default-extensions: OverloadedStrings
 
 executables:
   firestone-exe:
@@ -33,6 +37,7 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    default-extensions: OverloadedStrings
     dependencies:
     - firestone
 
