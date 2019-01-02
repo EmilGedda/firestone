@@ -24,10 +24,12 @@ dependencies:
 - text >= 1.2 && < 2
 - containers >= 0.6 && < 1
 - pretty-show >= 1.9 && < 2
+- lens >= 4.17 && < 5.0
+- servant-server >= 0.15 && < 1
 
 library:
   source-dirs: src
-  default-extensions: OverloadedStrings
+  default-extensions: OverloadedStrings, TemplateHaskell
 
 executables:
   firestone-exe:
@@ -37,7 +39,7 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    default-extensions: OverloadedStrings
+    default-extensions: OverloadedStrings, TemplateHaskell
     dependencies:
     - firestone
 
